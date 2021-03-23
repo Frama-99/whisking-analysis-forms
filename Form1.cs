@@ -28,7 +28,7 @@ namespace WhiskingAnalysis
 
             System.Diagnostics.Trace.WriteLine("WhiskingAnalysis - starting");
 
-            YOffset = 0; // MainMenu.Size.Height; //To draw the image below the menu bar
+            YOffset = MainMenu.Size.Height; //To draw the image below the menu bar
 
             SequenceReady = false;
             SampleSequence = new Sequence();
@@ -93,7 +93,7 @@ namespace WhiskingAnalysis
             }
         }
 
-        /* 
+        
         private void OnMenuExit(object sender, EventArgs e)
         {
             Application.Exit(); //Quit
@@ -276,7 +276,7 @@ namespace WhiskingAnalysis
         private void OnUpdateMenuCloseSequence(object sender, PaintEventArgs e)
         {
             CloseSequenceItem.Enabled = SequenceReady;
-        } */
+        }
     }
 }
 

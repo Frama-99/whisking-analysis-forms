@@ -39,6 +39,19 @@ namespace WhiskingAnalysis
             this.L_TBSplitter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.R_TBSplitter)).BeginInit();
             this.R_TBSplitter.SuspendLayout();
+            this.MainMenu = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grabberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuLive = new System.Windows.Forms.ToolStripMenuItem();
+            this.propertyPagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewImageInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.directAccessToSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.directAccessToAdjustmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sequencerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NewSequenceItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CloseSequenceItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // LRSplitter
@@ -86,13 +99,116 @@ namespace WhiskingAnalysis
             this.R_TBSplitter.SplitterDistance = 212;
             this.R_TBSplitter.TabIndex = 0;
             // 
+            // MainMenu
+            // 
+            this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.grabberToolStripMenuItem,
+            this.sequencerToolStripMenuItem});
+            this.MainMenu.Location = new System.Drawing.Point(0, 0);
+            this.MainMenu.Name = "MainMenu";
+            this.MainMenu.Size = new System.Drawing.Size(632, 24);
+            this.MainMenu.TabIndex = 0;
+            this.MainMenu.Text = "MainMenu";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnMenuExit);
+            // 
+            // grabberToolStripMenuItem
+            // 
+            this.grabberToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuLive,
+            this.propertyPagesToolStripMenuItem,
+            this.viewImageInformationToolStripMenuItem,
+            this.directAccessToSettingsToolStripMenuItem,
+            this.directAccessToAdjustmentsToolStripMenuItem});
+            this.grabberToolStripMenuItem.Name = "grabberToolStripMenuItem";
+            this.grabberToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.grabberToolStripMenuItem.Text = "Grabber";
+            // 
+            // MenuLive
+            // 
+            this.MenuLive.Checked = true;
+            this.MenuLive.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.MenuLive.Name = "MenuLive";
+            this.MenuLive.Size = new System.Drawing.Size(239, 22);
+            this.MenuLive.Text = "Live";
+            this.MenuLive.Click += new System.EventHandler(this.OnMenuLive);
+            // 
+            // propertyPagesToolStripMenuItem
+            // 
+            this.propertyPagesToolStripMenuItem.Name = "propertyPagesToolStripMenuItem";
+            this.propertyPagesToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.propertyPagesToolStripMenuItem.Text = "Property Pages...";
+            this.propertyPagesToolStripMenuItem.Click += new System.EventHandler(this.OnMenuPropertyPages);
+            // 
+            // viewImageInformationToolStripMenuItem
+            // 
+            this.viewImageInformationToolStripMenuItem.Name = "viewImageInformationToolStripMenuItem";
+            this.viewImageInformationToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.viewImageInformationToolStripMenuItem.Text = "View Image Information...";
+            this.viewImageInformationToolStripMenuItem.Click += new System.EventHandler(this.OnMenuImageInfo);
+            // 
+            // directAccessToSettingsToolStripMenuItem
+            // 
+            this.directAccessToSettingsToolStripMenuItem.Name = "directAccessToSettingsToolStripMenuItem";
+            this.directAccessToSettingsToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.directAccessToSettingsToolStripMenuItem.Text = "Direct Access To Settings...";
+            this.directAccessToSettingsToolStripMenuItem.Click += new System.EventHandler(this.OnMenuDirectSettings);
+            // 
+            // directAccessToAdjustmentsToolStripMenuItem
+            // 
+            this.directAccessToAdjustmentsToolStripMenuItem.Name = "directAccessToAdjustmentsToolStripMenuItem";
+            this.directAccessToAdjustmentsToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.directAccessToAdjustmentsToolStripMenuItem.Text = "Direct Access To Adjustments...";
+            this.directAccessToAdjustmentsToolStripMenuItem.Click += new System.EventHandler(this.OnMenuDirectAdjustments);
+            // 
+            // sequencerToolStripMenuItem
+            // 
+            this.sequencerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NewSequenceItem,
+            this.CloseSequenceItem});
+            this.sequencerToolStripMenuItem.Name = "sequencerToolStripMenuItem";
+            this.sequencerToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.sequencerToolStripMenuItem.Text = "Sequencer";
+            // 
+            // NewSequenceItem
+            // 
+            this.NewSequenceItem.Name = "NewSequenceItem";
+            this.NewSequenceItem.Size = new System.Drawing.Size(168, 22);
+            this.NewSequenceItem.Text = "New Sequence...";
+            this.NewSequenceItem.Paint += new System.Windows.Forms.PaintEventHandler(this.OnUpdateMenuNewSequence);
+            this.NewSequenceItem.Click += new System.EventHandler(this.OnMenuNewSequence);
+            // 
+            // CloseSequenceItem
+            // 
+            this.CloseSequenceItem.Name = "CloseSequenceItem";
+            this.CloseSequenceItem.Size = new System.Drawing.Size(168, 22);
+            this.CloseSequenceItem.Text = "Close Sequence";
+            this.CloseSequenceItem.Paint += new System.Windows.Forms.PaintEventHandler(this.OnUpdateMenuCloseSequence);
+            this.CloseSequenceItem.Click += new System.EventHandler(this.OnMenuCloseSequence);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 446);
+            this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.LRSplitter);
             this.DoubleBuffered = true;
+            this.MainMenuStrip = this.MainMenu;
             this.Name = "MainForm";
             this.Text = "Whisking Analysis";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DemoGrabForm_FormClosed);
@@ -105,29 +221,28 @@ namespace WhiskingAnalysis
             this.L_TBSplitter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.R_TBSplitter)).EndInit();
             this.R_TBSplitter.ResumeLayout(false);
+            this.MainMenu.ResumeLayout(false);
+            this.MainMenu.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion
 
-        // private System.Windows.Forms.MenuStrip MainMenu;
+        private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.SplitContainer LRSplitter;
         private System.Windows.Forms.SplitContainer L_TBSplitter;
         private System.Windows.Forms.SplitContainer R_TBSplitter;
-        /*
-private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-private System.Windows.Forms.ToolStripMenuItem grabberToolStripMenuItem;
-private System.Windows.Forms.ToolStripMenuItem MenuLive;
-private System.Windows.Forms.ToolStripMenuItem propertyPagesToolStripMenuItem;
-private System.Windows.Forms.ToolStripMenuItem viewImageInformationToolStripMenuItem;
-private System.Windows.Forms.ToolStripMenuItem directAccessToSettingsToolStripMenuItem;
-private System.Windows.Forms.ToolStripMenuItem directAccessToAdjustmentsToolStripMenuItem;
-private System.Windows.Forms.ToolStripMenuItem sequencerToolStripMenuItem;
-private System.Windows.Forms.ToolStripMenuItem NewSequenceItem;
-private System.Windows.Forms.ToolStripMenuItem CloseSequenceItem;
-*/
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem grabberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuLive;
+        private System.Windows.Forms.ToolStripMenuItem propertyPagesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewImageInformationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem directAccessToSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem directAccessToAdjustmentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sequencerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NewSequenceItem;
+        private System.Windows.Forms.ToolStripMenuItem CloseSequenceItem;
     }
 }
 
